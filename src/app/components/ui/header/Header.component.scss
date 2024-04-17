@@ -1,3 +1,22 @@
 .example-spacer {
     flex: 1 1 auto;
 }
+
+.toolbar {
+    display: flex;
+    align-items: center;
+
+    &.button {
+        margin-left: 10px;
+        justify-content: center;
+
+        &:first-child {
+            margin: 0;
+        }
+    }
+}
+
+.no-select {
+    cursor: pointer;
+    user-select: none;
+}

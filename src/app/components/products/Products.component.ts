@@ -12,7 +12,7 @@ import { CardComponent } from './card/card.component';
   imports: [HttpClientModule, MatCardModule, MatButtonModule, CardComponent],
 })
 export class ProductsComponent implements OnInit {
-  public test: string[] = ['first', 'second', 'third'];
+  public test: string[] = ['first', 'second', 'third','first', 'second', 'third','first', 'second', 'third','first', 'second', 'third','first', 'second', 'third'];
   constructor(private http: HttpClient) {}
 
   ngOnInit() {

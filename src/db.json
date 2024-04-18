@@ -1,16 +1,26 @@
 {
-    "posts": [
-      { "id": "1", "title": "a title", "views": 100 },
-      { "id": "2", "title": "another title", "views": 200 }
-    ],
-    "comments": [
-      { "id": "1", "text": "a comment about post 1", "postId": "1" },
-      { "id": "2", "text": "another comment about post 1", "postId": "1" }
-    ],
-    "profile": {
-      "name": "typicode"
+  "beats": [
+    { 
+      "id": "1", 
+      "title": "gunna type beat", 
+      "views": 500, 
+      "genre": "trap",
+      "image": "https://www.billboard.com/wp-content/uploads/2020/05/gunna-press-cr-Spike-jordan-Maxime-Quoilin-billboard-1548-1589819860.jpg?w=1024",
+      "price": {
+        "current": 19,
+        "currency": "USD"
+      } 
     },
-    "tests": {
-        "name": "typicode"
+    { 
+      "id": "2", 
+      "title": "tyga type beat", 
+      "views": 1500,
+      "genre": "trap",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfquDhb2cAy3ZQe4lHGinZP6Obr65L52QFgBXWt_LtmA&s",
+      "price": {
+        "current": 10,
+        "currency": "USD"
+      } 
     }
-  }
+  ]
+}

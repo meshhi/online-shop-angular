@@ -1,0 +1,25 @@
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    min-height: 70vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 auto;
+    padding-block: 2rem;
+
+    .example-spacer {
+      flex: 1 1 auto;
+    }
+
+    .btns {
+      display: flex;
+    }
+}
+
+.example-full-width {
+  width: 100%;
+}
+  

@@ -1,16 +1,50 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import {
+  MatDialog,
+  MAT_DIALOG_DATA,
+  MatDialogRef,
+  MatDialogTitle,
+  MatDialogContent,
+  MatDialogActions,
+  MatDialogClose,
+} from '@angular/material/dialog';
+import {MatInputModule} from '@angular/material/input';
 
 @Component({
-selector: 'DialogBox-component',
-templateUrl: './DialogBox.component.html',
-styleUrls: ['./DialogBox.component.scss']
+  selector: 'DialogBox-component',
+  standalone: true,
+  templateUrl: './DialogBox.component.html',
+  styleUrls: ['./DialogBox.component.scss'],
+  imports: [MatFormFieldModule, ReactiveFormsModule, FormsModule, MatButtonModule, MatInputModule, MatDialogActions, MatDialogClose],
 })
-export class DialogboxComponent implements OnInit {
+export class DialogBoxComponent implements OnInit {
+  public myForm: FormGroup = new FormGroup({
+    title: new FormControl(''),
+    views: new FormControl(0),
+    image: new FormControl(''),
+    genre: new FormControl(''),
+    price_current: new FormControl(0),
+    price_currency: new FormControl('usd'),
+  });
 
-constructor() {
-}
+  public dialogData: string | undefined;
+  constructor(
+    public dialogRef: MatDialogRef<DialogBoxComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any
+  ) {}
 
-ngOnInit(){
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
 
-}
+  onSubmit(): void {
+    
+  }
+
+  ngOnInit() {
+    console.log(this.data)
+  }
 }

@@ -1,1 +1,16 @@
-<h1> DialogBox.component component generated </h1>
+<form class="example-form" [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <mat-form-field class="example-full-width">
+      <mat-label>Favorite food</mat-label>
+      <input matInput formControlName="title">
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <mat-label>Leave a comment</mat-label>
+      <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+    </mat-form-field>
+    <span class="example-spacer"></span>
+    <div class="btns">
+      <button mat-button type="submit">Добавить</button>
+      <button mat-flat-button (click)="onNoClick()">Отмена</button>
+    </div>
+  </form>

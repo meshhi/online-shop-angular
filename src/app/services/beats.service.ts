@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpBackend } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, map } from 'rxjs';
 import { Beat } from '../models/Beats';
@@ -9,7 +9,7 @@ import { Beat } from '../models/Beats';
 export class BeatsService {
   private baseUrl: string = 'http://localhost:3000/beats';
   public errorMessage: string = "";
-  constructor(private http: HttpClient) {}
+  constructor(public http: HttpClient) {}
 
   getBeats(): Observable<Beat[]> {
     return this.http.get<Beat[]>(this.baseUrl)

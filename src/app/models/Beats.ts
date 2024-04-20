@@ -1,6 +1,6 @@
 export enum Currency {
-    USD,
-    RUB
+    USD = "usd",
+    RUB = "rub",
 }
 
 export type Price = {

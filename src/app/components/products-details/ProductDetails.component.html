@@ -1,1 +1,19 @@
-<h1> ProductDetails.component component generated </h1>
+<div class="container">
+    <!-- <card-component title="{{beat.title}}"></card-component> -->
+    <mat-card class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{ beat.title }}</mat-card-title>
+        <mat-card-subtitle>{{ beat.views }} {{ beat.price.current | currency }}</mat-card-subtitle>
+      </mat-card-header>
+      <img class="example-card-image" mat-card-image src="{{ beat.image }}}" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <p>
+          {{ beat.genre }}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>В корзину</button>
+      </mat-card-actions>
+    </mat-card>
+</div>

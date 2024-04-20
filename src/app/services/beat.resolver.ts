@@ -13,10 +13,9 @@ import { BeatsService } from './beats.service';
   providedIn: 'root',
 })
 export class BeatResolver implements Resolve<Beat> {
-  constructor(private beatsService: BeatsService, private router: Router) {
+  constructor(public beatsService: BeatsService, public router: Router) {
 
   }
-
 
   resolve(
     route: ActivatedRouteSnapshot,

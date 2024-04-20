@@ -7,14 +7,31 @@
   justify-content: center;
   gap: 1rem;
 
-
-
-    .example-card-image {
-      width: 350px;
-      height: 400px;
-    }
-  
-
-
+  .example-card-image {
+    width: 350px;
+    height: 400px;
+  }
 }
 
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+
+  &.button {
+    margin-left: 10px;
+    justify-content: center;
+
+    &:first-child {
+      margin: 0;
+    }
+  }
+}
+
+.no-select {
+  cursor: pointer;
+  user-select: none;
+}

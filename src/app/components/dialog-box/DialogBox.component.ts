@@ -44,8 +44,7 @@ export class DialogBoxComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.beatsService.postBeat(this.myForm.value)
-    .subscribe(data => console.log('postBeat is sending'));
+    this.dialogRef.close(this.myForm.value);
   }
 
   ngOnInit() {

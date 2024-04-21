@@ -28,6 +28,7 @@ export class ProductsComponent implements OnInit{
   public canView: boolean = true;
 
   public dialogRefSubscription: Subscription | undefined;
+  public postBeatSubscription: Subscription | undefined;
 
   constructor(public beatsService: BeatsService, public dialog: MatDialog) {}
 
@@ -47,13 +48,16 @@ export class ProductsComponent implements OnInit{
 
     const dialogRef = this.dialog.open(DialogBoxComponent, dialogConfig);
 
-    this.dialogRefSubscription = dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+    this.dialogRefSubscription = dialogRef.afterClosed().subscribe(beat => {
+        this.postBeatSubscription = this.beatsService.postBeat(beat)
+        .subscribe(data => this.beats.push(beat));
     });
   }
 
   ngOnDestroy() {
     if(this.beatsSubscription) this.beatsSubscription.unsubscribe();
     if(this.dialogRefSubscription) this.dialogRefSubscription.unsubscribe();
+    if(this.postBeatSubscription) this.postBeatSubscription.unsubscribe();
+    
   }
 }

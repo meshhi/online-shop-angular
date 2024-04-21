@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, SimpleChanges } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -12,6 +12,8 @@ import {
   MatDialogClose,
 } from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
+import { BeatsService } from '../../services/beats.service';
+import { catchError } from 'rxjs';
 
 @Component({
   selector: 'DialogBox-component',
@@ -33,7 +35,8 @@ export class DialogBoxComponent implements OnInit {
   public dialogData: string | undefined;
   constructor(
     public dialogRef: MatDialogRef<DialogBoxComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    public beatsService: BeatsService
   ) {}
 
   onNoClick(): void {
@@ -41,10 +44,11 @@ export class DialogBoxComponent implements OnInit {
   }
 
   onSubmit(): void {
-    
+    this.beatsService.postBeat(this.myForm.value)
+    .subscribe(data => console.log('postBeat is sending'));
   }
 
   ngOnInit() {
-    console.log(this.data)
+    
   }
 }

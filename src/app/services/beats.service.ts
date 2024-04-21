@@ -19,7 +19,7 @@ export class BeatsService {
         return beats;
       }),
       catchError(err => {
-        console.log(err); 
+        console.log(this); 
         this.errorMessage = err.message;
         return [];
       })
@@ -27,6 +27,24 @@ export class BeatsService {
   }
 
   getBeat(id: number): Observable<Beat> {
-    return this.http.get<Beat>(`${this.baseUrl}/${id}`);
+    return this.http.get<Beat>(`${this.baseUrl}/${id}`)
+    .pipe(
+      catchError(err => {
+        console.log(this); 
+        this.errorMessage = err.message;
+        return [];
+      })
+    );;
+  }
+
+  postBeat(beat: Beat): Observable<any> {
+    return this.http.post<Beat>(`${this.baseUrl}/add`, beat)
+    .pipe(
+      catchError(err => {
+        console.log(this); 
+        this.errorMessage = err.message;
+        return [];
+      })
+    );;
   }
 }

@@ -1,9 +1,36 @@
+<div>{{ this.beatsService.errorMessage }}</div>
+
 <form class="example-form" [formGroup]="myForm" (ngSubmit)="onSubmit()">
     <mat-form-field class="example-full-width">
-      <mat-label>Favorite food</mat-label>
+      <mat-label>Title</mat-label>
       <input matInput formControlName="title">
     </mat-form-field>
-  
+
+    <mat-form-field class="example-full-width">
+      <mat-label>views</mat-label>
+      <input matInput formControlName="views">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>img_src</mat-label>
+      <input matInput formControlName="image">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>genre</mat-label>
+      <input matInput formControlName="genre">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>price_current</mat-label>
+      <input matInput formControlName="price_current">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>price_currency</mat-label>
+      <input matInput formControlName="price_currency">
+    </mat-form-field>
+
     <mat-form-field class="example-full-width">
       <mat-label>Leave a comment</mat-label>
       <textarea matInput placeholder="Ex. It makes me feel..."></textarea>

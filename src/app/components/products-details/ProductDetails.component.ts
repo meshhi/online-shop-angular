@@ -20,7 +20,6 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
     CommonModule,
     RouterLink,
   ],
-  providers: [BeatsService],
 })
 export class ProductDetailsComponent implements OnInit {
   public beat!: Beat;
@@ -28,7 +27,7 @@ export class ProductDetailsComponent implements OnInit {
 
   constructor(
     public beatsService: BeatsService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
   ) {}
 
   ngOnInit() {

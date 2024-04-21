@@ -20,7 +20,6 @@ import { DialogBoxComponent } from '../dialog-box/DialogBox.component';
   templateUrl: './Products.component.html',
   styleUrls: ['./Products.component.scss'],
   imports: [HttpClientModule, MatCardModule, MatButtonModule, CommonModule, RouterLink, RouterLink, MatAutocompleteModule, MatFormFieldModule, MatToolbarModule, MatButtonModule, MatIconModule],
-  providers: [BeatsService]
 })
 export class ProductsComponent implements OnInit{
   public beats: Beat[] = [];
